@@ -1,0 +1,28 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'assets/application.json'
+
+jobs:
+  pulish:
+    name: Publish app to E-Com Plus Market
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Run publish script
+        env:
+          MARKET_TOKEN: ${{ secrets.MARKET_TOKEN }}
+        run: "MARKET_TOKEN=$MARKET_TOKEN npm run publish:market"
