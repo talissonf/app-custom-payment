@@ -7,8 +7,8 @@
 
 const app = {
   app_id: 108091,
-  title: 'My Awesome E-Com Plus App',
-  slug: 'my-awesome-app',
+  title: 'Pagamento personalizado',
+  slug: 'custom-payment',
   type: 'external',
   state: 'active',
   authentication: true,
