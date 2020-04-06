@@ -12,7 +12,7 @@ const app = {
   type: 'external',
   state: 'active',
   authentication: true,
-
+  version: '1.0.0',
   /**
    * Uncomment modules above to work with E-Com Plus Mods API on Storefront.
    * Ref.: https://developers.e-com.plus/modules-api/
@@ -139,6 +139,106 @@ const app = {
      * You can also set any other valid resource/subresource combination.
      * Ref.: https://developers.e-com.plus/docs/api/#/store/
      */
+  },
+
+  admin_settings: {
+    payment_options: {
+      schema: {
+        type: 'array',
+        title: 'Opções de Pagamento Customizadas',
+        description: 'Configure e oferença novas opções que pagamento em sua loja',
+        uniqueItems: true,
+        items: {
+          type: 'object',
+          required: ['label', 'text', 'payment_method', 'enabled'],
+          properties: {
+            label: {
+              type: 'string',
+              maxLength: 50,
+              title: 'Nome da forma de pagamento'
+            },
+            text: {
+              type: 'string',
+              maxLength: 1000,
+              description: 'Texto auxiliar para forma que pagamento, pode-se usar tags HTML',
+              title: 'Descrição'
+            },
+            icon: {
+              type: 'string',
+              maxLength: 255,
+              format: 'uri',
+              description: 'Url para icone da forma de pagamento',
+              title: 'Icone'
+            },
+            payment_method: {
+              type: 'object',
+              required: ['code'],
+              additionalProperties: false,
+              properties: {
+                code: {
+                  type: 'string',
+                  enum: [
+                    'credit_card',
+                    'account_deposit',
+                    'debit_card',
+                    'balance_on_intermediary',
+                    'loyalty_points',
+                    'other'
+                  ],
+                  description: 'Código da forma de pagamento',
+                  title: 'Codigo de pagamento'
+                },
+                name: {
+                  type: 'string',
+                  maxLength: 200,
+                  description: 'Descrição para a forma de pagamento',
+                  title: 'Nome'
+                }
+              }
+            },
+            discount: {
+              type: 'object',
+              required: ['value'],
+              additionalProperties: false,
+              properties: {
+                apply_at: {
+                  type: 'string',
+                  enum: ['total', 'subtotal', 'freight'],
+                  default: 'subtotal',
+                  description: 'Em qual valor o desconto deverá ser aplicado no checkout'
+                },
+                type: {
+                  type: 'string',
+                  enum: ['percentage', 'fixed'],
+                  default: 'percentage',
+                  description: 'Valor percentual ou fixo a ser descontado, dependendo to tipo configurado'
+                },
+                value: {
+                  type: 'number',
+                  minimum: -99999999,
+                  maximum: 99999999,
+                  description: 'Valor do desconto'
+                }
+              },
+              title: 'Desconto'
+            },
+            min_amount: {
+              type: 'integer',
+              minimum: 1,
+              maximum: 999999999,
+              description: 'Valor mínimo para habilitar forma de pagamento',
+              title: 'Valor mínimo'
+            },
+            enabled: {
+              type: 'boolean',
+              title: 'Habilitado',
+              default: false
+            }
+          }
+        }
+      },
+      hide: false
+    }
   }
 }
 
