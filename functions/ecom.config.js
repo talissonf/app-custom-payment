@@ -12,7 +12,6 @@ const app = {
   type: 'external',
   state: 'active',
   authentication: true,
-  version: '1.0.0',
   /**
    * Uncomment modules above to work with E-Com Plus Mods API on Storefront.
    * Ref.: https://developers.e-com.plus/modules-api/
