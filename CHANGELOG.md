@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.0.0 (2020-04-07)
+
+
+### Features
+
+* **create-transaction:** handle transaction ([cc08892](https://github.com/ecomplus/application-starter/commit/cc088928ebd324a83e8300c0f42e503119177074))
+* **list-payments:** returning available payment methods ([5ce7ba2](https://github.com/ecomplus/application-starter/commit/5ce7ba26c87b7b74523d6b29434bdee325b2e3c3))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#2](https://github.com/ecomplus/application-starter/issues/2)) ([edc0209](https://github.com/ecomplus/application-starter/commit/edc02098e3e11f558be333d4cc17fa604e206ae0))
+* **deps:** update all non-major dependencies ([#3](https://github.com/ecomplus/application-starter/issues/3)) ([88dde44](https://github.com/ecomplus/application-starter/commit/88dde44da747bd12d2086f27edd6470de0ace09c))
+* replacing dashes with underline in module names ([f003fe3](https://github.com/ecomplus/application-starter/commit/f003fe369df2ea503c595314eaa59e02ec877312))
+
 ## [1.0.0-starter.5](https://github.com/ecomplus/application-starter/compare/v1.0.0-starter.4...v1.0.0-starter.5) (2020-03-05)
 
 
