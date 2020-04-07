@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "",
-    "short_description": "",
-    "category": "tools"
+    "title": "Pagamento personalizado",
+    "short_description": "Ofereça formas de pagamento personalizadas no checkout",
+    "category": "sales"
   }
 }
